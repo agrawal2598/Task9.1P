@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.restuarantmapapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_navigation_home_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.restuarantmapapp.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.restuarantmapapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.restuarantmapapp.MapsFragment"
+        android:label="Restuarants"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/addPlaceFragment"
+        android:name="com.example.restuarantmapapp.ui.addplace.AddPlaceFragment"
+        android:label="Add Restaurant">
+        <action
+            android:id="@+id/action_addPlaceFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+    </fragment>
+</navigation>
